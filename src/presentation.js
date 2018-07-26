@@ -37,6 +37,10 @@ const theme = createTheme(
 
 export default class Presentation extends React.Component {
   render() {
-    return <Deck theme={theme}>{Slides}</Deck>;
+    return (
+      <Deck theme={theme} contentHeight={1000}>
+        {Slides}
+      </Deck>
+    );
   }
 }
