@@ -1,0 +1,624 @@
+{
+  "data": {
+    "modeSegs": [
+      {
+        "chromosome": "01",
+        "start": 1,
+        "end": 27500001,
+        "state": 1
+      },
+      {
+        "chromosome": "01",
+        "start": 27500001,
+        "end": 117000001,
+        "state": 2
+      },
+      {
+        "chromosome": "01",
+        "start": 117000001,
+        "end": 151500001,
+        "state": 11
+      },
+      {
+        "chromosome": "01",
+        "start": 151500001,
+        "end": 161500001,
+        "state": 4
+      },
+      {
+        "chromosome": "01",
+        "start": 161500001,
+        "end": 166500001,
+        "state": 11
+      },
+      {
+        "chromosome": "01",
+        "start": 166500001,
+        "end": 182500001,
+        "state": 4
+      },
+      {
+        "chromosome": "01",
+        "start": 182500001,
+        "end": 185500001,
+        "state": 9
+      },
+      {
+        "chromosome": "01",
+        "start": 185500001,
+        "end": 249500001,
+        "state": 4
+      },
+      {
+        "chromosome": "02",
+        "start": 1,
+        "end": 18000001,
+        "state": 3
+      },
+      {
+        "chromosome": "02",
+        "start": 18000001,
+        "end": 53500001,
+        "state": 2
+      },
+      {
+        "chromosome": "02",
+        "start": 53500001,
+        "end": 59500001,
+        "state": 3
+      },
+      {
+        "chromosome": "02",
+        "start": 59500001,
+        "end": 89500001,
+        "state": 4
+      },
+      {
+        "chromosome": "02",
+        "start": 89500001,
+        "end": 243500001,
+        "state": 2
+      },
+      {
+        "chromosome": "03",
+        "start": 1,
+        "end": 198500001,
+        "state": 2
+      },
+      {
+        "chromosome": "04",
+        "start": 1,
+        "end": 55000001,
+        "state": 2
+      },
+      {
+        "chromosome": "04",
+        "start": 55000001,
+        "end": 56000001,
+        "state": 11
+      },
+      {
+        "chromosome": "04",
+        "start": 56000001,
+        "end": 191500001,
+        "state": 2
+      },
+      {
+        "chromosome": "05",
+        "start": 1,
+        "end": 46000001,
+        "state": 4
+      },
+      {
+        "chromosome": "05",
+        "start": 46000001,
+        "end": 113000001,
+        "state": 2
+      },
+      {
+        "chromosome": "05",
+        "start": 113000001,
+        "end": 141500001,
+        "state": 3
+      },
+      {
+        "chromosome": "05",
+        "start": 141500001,
+        "end": 165500001,
+        "state": 2
+      },
+      {
+        "chromosome": "05",
+        "start": 165500001,
+        "end": 181000001,
+        "state": 3
+      },
+      {
+        "chromosome": "06",
+        "start": 1,
+        "end": 38500001,
+        "state": 3
+      },
+      {
+        "chromosome": "06",
+        "start": 38500001,
+        "end": 42500001,
+        "state": 4
+      },
+      {
+        "chromosome": "06",
+        "start": 42500001,
+        "end": 46000001,
+        "state": 6
+      },
+      {
+        "chromosome": "06",
+        "start": 46000001,
+        "end": 55000001,
+        "state": 4
+      },
+      {
+        "chromosome": "06",
+        "start": 55000001,
+        "end": 71500001,
+        "state": 3
+      },
+      {
+        "chromosome": "06",
+        "start": 71500001,
+        "end": 171500001,
+        "state": 2
+      },
+      {
+        "chromosome": "07",
+        "start": 1,
+        "end": 65000001,
+        "state": 2
+      },
+      {
+        "chromosome": "07",
+        "start": 65000001,
+        "end": 68500001,
+        "state": 3
+      },
+      {
+        "chromosome": "07",
+        "start": 68500001,
+        "end": 71500001,
+        "state": 11
+      },
+      {
+        "chromosome": "07",
+        "start": 71500001,
+        "end": 85000001,
+        "state": 3
+      },
+      {
+        "chromosome": "07",
+        "start": 85000001,
+        "end": 159500001,
+        "state": 4
+      },
+      {
+        "chromosome": "X",
+        "start": 1,
+        "end": 45000001,
+        "state": 3
+      },
+      {
+        "chromosome": "X",
+        "start": 45000001,
+        "end": 58000001,
+        "state": 4
+      },
+      {
+        "chromosome": "X",
+        "start": 58000001,
+        "end": 139500001,
+        "state": 2
+      },
+      {
+        "chromosome": "X",
+        "start": 139500001,
+        "end": 155500001,
+        "state": 3
+      },
+      {
+        "chromosome": "08",
+        "start": 1,
+        "end": 14500001,
+        "state": 2
+      },
+      {
+        "chromosome": "08",
+        "start": 14500001,
+        "end": 18000001,
+        "state": 3
+      },
+      {
+        "chromosome": "08",
+        "start": 18000001,
+        "end": 27500001,
+        "state": 2
+      },
+      {
+        "chromosome": "08",
+        "start": 27500001,
+        "end": 39500001,
+        "state": 3
+      },
+      {
+        "chromosome": "08",
+        "start": 39500001,
+        "end": 48000001,
+        "state": 4
+      },
+      {
+        "chromosome": "08",
+        "start": 48000001,
+        "end": 50000001,
+        "state": 5
+      },
+      {
+        "chromosome": "08",
+        "start": 50000001,
+        "end": 53500001,
+        "state": 6
+      },
+      {
+        "chromosome": "08",
+        "start": 53500001,
+        "end": 68000001,
+        "state": 4
+      },
+      {
+        "chromosome": "08",
+        "start": 68000001,
+        "end": 146500001,
+        "state": 5
+      },
+      {
+        "chromosome": "09",
+        "start": 1,
+        "end": 38500001,
+        "state": 3
+      },
+      {
+        "chromosome": "09",
+        "start": 38500001,
+        "end": 39000001,
+        "state": 2
+      },
+      {
+        "chromosome": "09",
+        "start": 39000001,
+        "end": 70000001,
+        "state": 1
+      },
+      {
+        "chromosome": "09",
+        "start": 70000001,
+        "end": 131500001,
+        "state": 2
+      },
+      {
+        "chromosome": "09",
+        "start": 131500001,
+        "end": 136000001,
+        "state": 1
+      },
+      {
+        "chromosome": "09",
+        "start": 136000001,
+        "end": 141500001,
+        "state": 2
+      },
+      {
+        "chromosome": "10",
+        "start": 1,
+        "end": 20500001,
+        "state": 5
+      },
+      {
+        "chromosome": "10",
+        "start": 20500001,
+        "end": 62500001,
+        "state": 4
+      },
+      {
+        "chromosome": "10",
+        "start": 62500001,
+        "end": 82000001,
+        "state": 3
+      },
+      {
+        "chromosome": "10",
+        "start": 82000001,
+        "end": 86500001,
+        "state": 2
+      },
+      {
+        "chromosome": "10",
+        "start": 86500001,
+        "end": 88500001,
+        "state": 3
+      },
+      {
+        "chromosome": "10",
+        "start": 88500001,
+        "end": 136000001,
+        "state": 2
+      },
+      {
+        "chromosome": "11",
+        "start": 1,
+        "end": 19000001,
+        "state": 2
+      },
+      {
+        "chromosome": "11",
+        "start": 19000001,
+        "end": 31500001,
+        "state": 4
+      },
+      {
+        "chromosome": "11",
+        "start": 31500001,
+        "end": 58000001,
+        "state": 3
+      },
+      {
+        "chromosome": "11",
+        "start": 58000001,
+        "end": 135500001,
+        "state": 4
+      },
+      {
+        "chromosome": "12",
+        "start": 1,
+        "end": 9000001,
+        "state": 11
+      },
+      {
+        "chromosome": "12",
+        "start": 9000001,
+        "end": 13000001,
+        "state": 7
+      },
+      {
+        "chromosome": "12",
+        "start": 13000001,
+        "end": 14500001,
+        "state": 3
+      },
+      {
+        "chromosome": "12",
+        "start": 14500001,
+        "end": 19500001,
+        "state": 2
+      },
+      {
+        "chromosome": "12",
+        "start": 19500001,
+        "end": 22500001,
+        "state": 1
+      },
+      {
+        "chromosome": "12",
+        "start": 22500001,
+        "end": 31000001,
+        "state": 2
+      },
+      {
+        "chromosome": "12",
+        "start": 31000001,
+        "end": 38500001,
+        "state": 1
+      },
+      {
+        "chromosome": "12",
+        "start": 38500001,
+        "end": 39500001,
+        "state": 2
+      },
+      {
+        "chromosome": "12",
+        "start": 39500001,
+        "end": 41000001,
+        "state": 6
+      },
+      {
+        "chromosome": "12",
+        "start": 41000001,
+        "end": 42500001,
+        "state": 7
+      },
+      {
+        "chromosome": "12",
+        "start": 42500001,
+        "end": 134000001,
+        "state": 2
+      },
+      {
+        "chromosome": "13",
+        "start": 1,
+        "end": 65500001,
+        "state": 2
+      },
+      {
+        "chromosome": "13",
+        "start": 65500001,
+        "end": 99500001,
+        "state": 4
+      },
+      {
+        "chromosome": "13",
+        "start": 99500001,
+        "end": 106500001,
+        "state": 8
+      },
+      {
+        "chromosome": "13",
+        "start": 106500001,
+        "end": 115500001,
+        "state": 4
+      },
+      {
+        "chromosome": "14",
+        "start": 1,
+        "end": 107500001,
+        "state": 2
+      },
+      {
+        "chromosome": "15",
+        "start": 1,
+        "end": 103000001,
+        "state": 2
+      },
+      {
+        "chromosome": "16",
+        "start": 1,
+        "end": 90500001,
+        "state": 2
+      },
+      {
+        "chromosome": "17",
+        "start": 1,
+        "end": 15500001,
+        "state": 2
+      },
+      {
+        "chromosome": "17",
+        "start": 15500001,
+        "end": 18000001,
+        "state": 11
+      },
+      {
+        "chromosome": "17",
+        "start": 18000001,
+        "end": 21500001,
+        "state": 4
+      },
+      {
+        "chromosome": "17",
+        "start": 21500001,
+        "end": 27000001,
+        "state": 11
+      },
+      {
+        "chromosome": "17",
+        "start": 27000001,
+        "end": 29000001,
+        "state": 6
+      },
+      {
+        "chromosome": "17",
+        "start": 29000001,
+        "end": 32000001,
+        "state": 5
+      },
+      {
+        "chromosome": "17",
+        "start": 32000001,
+        "end": 33000001,
+        "state": 6
+      },
+      {
+        "chromosome": "17",
+        "start": 33000001,
+        "end": 38500001,
+        "state": 11
+      },
+      {
+        "chromosome": "17",
+        "start": 38500001,
+        "end": 81500001,
+        "state": 2
+      },
+      {
+        "chromosome": "18",
+        "start": 1,
+        "end": 14500001,
+        "state": 3
+      },
+      {
+        "chromosome": "18",
+        "start": 14500001,
+        "end": 78500001,
+        "state": 2
+      },
+      {
+        "chromosome": "20",
+        "start": 1,
+        "end": 10500001,
+        "state": 2
+      },
+      {
+        "chromosome": "20",
+        "start": 10500001,
+        "end": 13000001,
+        "state": 11
+      },
+      {
+        "chromosome": "20",
+        "start": 13000001,
+        "end": 22500001,
+        "state": 3
+      },
+      {
+        "chromosome": "20",
+        "start": 22500001,
+        "end": 34000001,
+        "state": 2
+      },
+      {
+        "chromosome": "20",
+        "start": 34000001,
+        "end": 63500001,
+        "state": 3
+      },
+      {
+        "chromosome": "19",
+        "start": 1,
+        "end": 59500001,
+        "state": 2
+      },
+      {
+        "chromosome": "Y",
+        "start": 1,
+        "end": 59500001,
+        "state": 0
+      },
+      {
+        "chromosome": "22",
+        "start": 1,
+        "end": 51500001,
+        "state": 2
+      },
+      {
+        "chromosome": "21",
+        "start": 1,
+        "end": 27000001,
+        "state": 2
+      },
+      {
+        "chromosome": "21",
+        "start": 27000001,
+        "end": 32000001,
+        "state": 1
+      },
+      {
+        "chromosome": "21",
+        "start": 32000001,
+        "end": 33500001,
+        "state": 2
+      },
+      {
+        "chromosome": "21",
+        "start": 33500001,
+        "end": 48500001,
+        "state": 4
+      }
+    ]
+  }
+}
