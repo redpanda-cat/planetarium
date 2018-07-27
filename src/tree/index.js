@@ -13,11 +13,16 @@ import {
   TableHeaderItem,
   TableBody,
   TableItem,
-  Image
+  Image,
+  Fill,
+  Layout
 } from "spectacle";
 
 const images = {
-  cellscape: require("./assets/cellscape.png")
+  cellscape: require("./assets/cellscape.png"),
+  largeTree: require("./assets/cellscape2.png"),
+  lyra1: require("./assets/lyra1.png"),
+  lyra2: require("./assets/lyra2.png")
 };
 
 /**
@@ -26,7 +31,7 @@ const images = {
 
 const title = (
   <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-    <Heading size={6} textColor="secondary" caps>
+    <Heading size={6} textColor="secondary" caps fit>
       Creating a scalable tree
     </Heading>
   </Slide>
@@ -38,7 +43,9 @@ const title = (
 
 const data = (
   <Slide>
-    <Text margin="20px">Trees that have been generated have A LOT of data</Text>
+    <Text margin="20px" fit>
+      Trees that have been generated have A LOT of data
+    </Text>
     <Table>
       <TableHeader>
         <TableRow bold>
@@ -86,8 +93,16 @@ const data = (
 
 const cellscape1 = (
   <Slide>
-    <Heading>CellScape</Heading>
-    <Image src={images.cellscape.replace("/", "")} />
+    <Layout>
+      <Fill>
+        <Image src={images.cellscape.replace("/", "")} />
+      </Fill>
+      <Fill>
+        <Appear fid="1">
+          <Image src={images.largeTree.replace("/", "")} />
+        </Appear>
+      </Fill>
+    </Layout>
   </Slide>
 );
 
@@ -113,7 +128,21 @@ const goals = (
  */
 const threshold = (
   <Slide>
-    <Heading>Method</Heading>
+    <Layout>
+      <Fill>
+        <Image src={images.cellscape.replace("/", "")} />
+      </Fill>
+      <Appear fid="1">
+        <Fill>
+          <Image src={images.lyra1.replace("/", "")} />
+        </Fill>
+      </Appear>
+      <Appear fid="2">
+        <Fill>
+          <Image src={images.lyra2.replace("/", "")} />
+        </Fill>
+      </Appear>
+    </Layout>
   </Slide>
 );
 
