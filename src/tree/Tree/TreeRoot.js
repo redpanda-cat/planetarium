@@ -26,17 +26,24 @@ class TreeRoot extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currRootIndex: props.trueRootIndex,
+      currRootIndex: props.trueIndex,
+      currRootMax: props.trueMaxIndex,
       height: config["height"]
     };
   }
 
   render() {
-    const { currRootIndex, height } = this.state;
+    const { currRootIndex, currRootMax, height } = this.state;
     const yScale = getYScale();
+    const indPerPx = getIndicesPerPixel(currRootMax, height);
     return (
       <svg width={config["width"]} height={height}>
-        <TreeNode index={currRootIndex} isRoot yScale={yScale} />
+        <TreeNode
+          index={currRootIndex}
+          isRoot
+          yScale={yScale}
+          indPerPx={indPerPx}
+        />
       </svg>
     );
   }

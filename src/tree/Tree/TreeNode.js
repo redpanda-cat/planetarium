@@ -42,6 +42,7 @@ const TreeNode = ({ yScale, index, depth, siblingIndex, offsetBy, isRoot }) => {
         parentIndex={index - offsetBy}
         auntIndex={siblingIndex}
         offsetBy={offsetBy}
+        yScale={yScale}
       />
     </g>
   );
