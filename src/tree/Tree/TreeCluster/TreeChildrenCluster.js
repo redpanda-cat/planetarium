@@ -4,14 +4,8 @@
 
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
 
-import ReactTooltip from "react-tooltip";
 import TreeCluster from "./TreeCluster";
-
-import { makeIsIndexRangeHighlighted } from "./selectors.js";
-import { highlightElement, unhighlightElement } from "./actions.js";
 
 class TreeChildrenCluster extends Component {
   static propTypes = {
@@ -32,15 +26,8 @@ class TreeChildrenCluster extends Component {
     yScale: PropTypes.func.isRequired,
 
     /** offsetBy - number of indices to offset clusters by*/
-    offsetBy: PropTypes.number.isRequired,
-
-    /** isHighlighted - whether current cluster is highlighted */
-    isHighlighted: PropTypes.bool.isRequired
+    offsetBy: PropTypes.number.isRequired
   };
-
-  componentDidMount() {
-    ReactTooltip.rebuild();
-  }
 
   shouldComponentUpdate(nextProps, nextState) {
     return (
@@ -90,32 +77,9 @@ class TreeChildrenCluster extends Component {
         depth={depth}
         yScale={yScale}
         maxHeight={maxHeight}
-        isHighlighted={isHighlighted}
-        onMouseEnter={onMouseEnter}
-        onMouseLeave={onMouseLeave}
       />
     );
   }
 }
 
-/**
- * MapState function
- */
-const makeMapState = () => {
-  const isHighlighted = makeIsIndexRangeHighlighted();
-  const mapState = (state, ownProps) => ({
-    isHighlighted: isHighlighted(state, ownProps.minIndex, ownProps.maxIndex)
-  });
-  return mapState;
-};
-
-const mapDispatch = dispatch =>
-  bindActionCreators(
-    {
-      highlightElement,
-      unhighlightElement
-    },
-    dispatch
-  );
-
-export default connect(makeMapState(), mapDispatch)(TreeChildrenCluster);
+export default TreeChildrenCluster;

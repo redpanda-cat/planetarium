@@ -1,5 +1,3 @@
-import { treeConfig as prevConfig } from "../../config.js";
-
 const config = {
   height: 1000,
   width: 500,

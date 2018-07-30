@@ -18,6 +18,8 @@ import {
   Layout
 } from "spectacle";
 
+import Tree from "./Tree/Tree.js";
+
 const images = {
   cellscape: require("./assets/cellscape.png"),
   largeTree: require("./assets/cellscape2.png"),
@@ -148,7 +150,7 @@ const threshold = (
 
 const result = (
   <Slide>
-    <Heading>Result</Heading>
+    <Tree />
   </Slide>
 );
 

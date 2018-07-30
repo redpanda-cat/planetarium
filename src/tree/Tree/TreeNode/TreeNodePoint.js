@@ -4,19 +4,8 @@
 
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
 
 import TreeNodeCircle from "./TreeNodeCircle";
-import ReactTooltip from "react-tooltip";
-
-import { makeIsIndexHighlighted } from "./selectors.js";
-import {
-  highlightElement,
-  unhighlightElement,
-  setTreeRoot,
-  unsetTreeRoot
-} from "./actions.js";
 
 class TreeNodePoint extends Component {
   static propTypes = {
@@ -39,15 +28,8 @@ class TreeNodePoint extends Component {
     yScale: PropTypes.func.isRequired,
 
     /** offsetBy - number of indices to offset drawing by */
-    offsetBy: PropTypes.number.isRequired,
-
-    /** isHighlighted - whether current node is highlighted */
-    isHighlighted: PropTypes.bool.isRequired
+    offsetBy: PropTypes.number.isRequired
   };
-
-  componentDidMount() {
-    ReactTooltip.rebuild();
-  }
 
   shouldComponentUpdate(nextProps, nextState) {
     return (
@@ -96,37 +78,9 @@ class TreeNodePoint extends Component {
         heatmapIndex={heatmapIndex - offsetBy}
         depth={depth}
         yScale={yScale}
-        onMouseEnter={onMouseEnter}
-        onMouseLeave={onMouseLeave}
-        onMouseClick={onMouseClick}
-        isHighlighted={isHighlighted}
       />
     );
   }
 }
 
-/**
- * MapState
- */
-
-const makeMapState = () => {
-  const isIndexHighlighted = makeIsIndexHighlighted();
-  const mapState = (state, ownProps) => ({
-    isHighlighted: isIndexHighlighted(state, ownProps.heatmapIndex)
-  });
-
-  return mapState;
-};
-
-const mapDispatch = dispatch =>
-  bindActionCreators(
-    {
-      highlightElement,
-      unhighlightElement,
-      setTreeRoot,
-      unsetTreeRoot
-    },
-    dispatch
-  );
-
-export default connect(makeMapState(), mapDispatch)(TreeNodePoint);
+export default TreeNodePoint;

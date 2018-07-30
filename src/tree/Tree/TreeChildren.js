@@ -4,13 +4,8 @@
 
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { connect } from "react-redux";
 
-import {
-  makeGetTreeElementsByChildren,
-  getYScale,
-  getOffsetIndex
-} from "./selectors.js";
+import { getTreeElements, getOffsetIndex } from "./selectors.js";
 
 import TreeNode from "./TreeNode";
 import TreeChildrenCluster from "./TreeCluster/TreeChildrenCluster";
@@ -38,20 +33,26 @@ class TreeChildren extends Component {
   };
 
   render() {
-    const children = this.props.childrenElements.reduce(
-      (children, child) => [child, ...children],
-      []
-    );
     const {
-      offsetIndex,
       depth,
       yScale,
       parentIndex,
       auntIndex,
       offsetBy,
-      analysis
+      analysis,
+      indPerPx
     } = this.props;
+    console.log(indPerPx);
 
+    const childrenElements = getTreeElements(this.props.children, indPerPx);
+    const offsetIndex = getOffsetIndex(indPerPx);
+
+    const children = childrenElements.reduce(
+      (children, child) => [child, ...children],
+      []
+    );
+    console.log(this.props.children);
+    console.log(childrenElements);
     let maxIndex = parentIndex;
     let nextSiblingIndex, childJSX;
 
@@ -71,7 +72,8 @@ class TreeChildren extends Component {
           depth,
           nextSiblingIndex,
           newOffsetBy,
-          yScale
+          yScale,
+          indPerPx
         );
         maxIndex = Math.max(maxIndex, getChildIndex(child) - newOffsetBy);
       } else {
@@ -214,16 +216,18 @@ const drawTreeNode = (
   depth,
   siblingIndex,
   offsetBy,
-  yScale
+  yScale,
+  indPerPx
 ) => (
   <TreeNode
     analysis={analysis}
     key={currNode["index"]}
-    nodeID={currNode["id"]}
+    index={currNode["index"]}
     depth={depth}
     siblingIndex={siblingIndex}
     offsetBy={offsetBy}
     yScale={yScale}
+    indPerPx={indPerPx}
   />
 );
 
@@ -244,18 +248,4 @@ const drawTreeVerticalBranch = (minIndex, maxIndex, depth, yScale) => (
   />
 );
 
-/**
- * MapState Factory function for Tree Children (use of Reselect)
- * @return {func} mapState
- */
-const makeMapState = () => {
-  const getTreeElements = makeGetTreeElementsByChildren();
-  const mapState = (state, ownProps) => ({
-    childrenElements: getTreeElements(state, ownProps.children),
-    yScale: getYScale(state),
-    offsetIndex: getOffsetIndex(state)
-  });
-  return mapState;
-};
-
-export default connect(makeMapState)(TreeChildren);
+export default TreeChildren;

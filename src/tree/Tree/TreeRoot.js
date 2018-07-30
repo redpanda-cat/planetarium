@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
-import { getYScale } from "./selectors.js";
+import { getYScale, getIndicesPerPixel } from "./selectors.js";
 
 import TreeNode from "./TreeNode";
 
@@ -34,8 +34,9 @@ class TreeRoot extends Component {
 
   render() {
     const { currRootIndex, currRootMax, height } = this.state;
-    const yScale = getYScale();
-    const indPerPx = getIndicesPerPixel(currRootMax, height);
+    const numNodes = currRootMax - currRootIndex + 1;
+    const indPerPx = getIndicesPerPixel(numNodes, height);
+    const yScale = getYScale(currRootIndex, currRootMax, height);
     return (
       <svg width={config["width"]} height={height}>
         <TreeNode

@@ -5,12 +5,24 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import { getNodeData } from "./data.js";
+
 import TreeNodePoint from "./TreeNode/TreeNodePoint";
 import TreeChildren from "./TreeChildren";
 import TreeHorizontalBranch from "./TreeBranch/TreeHorizontalBranch";
 
-const TreeNode = ({ yScale, index, depth, siblingIndex, offsetBy, isRoot }) => {
-  const { id, children, parent, maxIndex } = getNodeData(index);
+const TreeNode = ({
+  yScale,
+  index,
+  depth,
+  siblingIndex,
+  offsetBy,
+  isRoot,
+  indPerPx
+}) => {
+  const data = getNodeData(index);
+  console.log(index, data);
+  const { id, children, parent, maxIndex } = data;
 
   const branch =
     parent === "root" ? (
@@ -36,13 +48,13 @@ const TreeNode = ({ yScale, index, depth, siblingIndex, offsetBy, isRoot }) => {
         isRoot={isRoot}
       />
       <TreeChildren
-        analysis={analysis}
         children={children}
         depth={depth + 1}
         parentIndex={index - offsetBy}
         auntIndex={siblingIndex}
         offsetBy={offsetBy}
         yScale={yScale}
+        indPerPx={indPerPx}
       />
     </g>
   );

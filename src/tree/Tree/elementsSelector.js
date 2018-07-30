@@ -1,25 +1,17 @@
 import { createSelector } from "reselect";
 
-import { getIndicesPerPixel } from "../selectors.js";
-
 import config from "./config.js";
 
-const getTreeClusterMinDescendants = createSelector(
-  [getIndicesPerPixel],
-  indPerPx => Math.floor(indPerPx * config["clusterMinHeight"])
-);
+const getTreeClusterMinDescendants = indPerPx =>
+  Math.floor(indPerPx * config["clusterMinHeight"]);
 
 /**
  * Gets threshold index distance - the number of indices apart children have to be in order to be visible
  */
-const getThresholdIndex = createSelector(
-  [getIndicesPerPixel],
-  // int => int
-  indPerPx => {
-    const thresholdIndex = indPerPx * config["thresholdMin"];
-    return thresholdIndex <= 1 ? -1 : thresholdIndex;
-  }
-);
+const getThresholdIndex = indPerPx => {
+  const thresholdIndex = indPerPx * config["thresholdMin"];
+  return thresholdIndex <= 1 ? -1 : thresholdIndex;
+};
 
 /**
  * 	Factory function - gets elements (nodes and clusters) of tree's (by cell ID) children
@@ -35,6 +27,15 @@ export const makeGetTreeElementsByChildren = () => {
     createTreeElementsForChildren
   );
 };
+
+export const getTreeElements = (children, indPerPx) =>
+  createTreeElementsForChildrenFunc(
+    [],
+    initializeCluster(),
+    getThresholdIndex(indPerPx),
+    getTreeClusterMinDescendants(indPerPx),
+    children
+  );
 
 /**
  * Create elements for children, based on whether distance between siblings is greater than threshold

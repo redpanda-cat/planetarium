@@ -3,19 +3,22 @@ import PropTypes from "prop-types";
 
 import TreeRoot from "./TreeRoot";
 
-const jsonData = require("../assets/data.json");
-const data = jsonData.data.allNodes;
+import { getRootData } from "./data.js";
 
 /**
  * Tree - React Component
  */
 
-const Tree = () => (
-  <TreeRoot
-    trueRootID={data[0].id}
-    trueIndex={data[0].index}
-    trueMaxIndex={data[0].maxIndex}
-  />
-);
+const Tree = () => {
+  const data = getRootData();
+
+  return (
+    <TreeRoot
+      trueRootID={data.id}
+      trueIndex={data.index}
+      trueMaxIndex={data.maxIndex}
+    />
+  );
+};
 
 export default Tree;

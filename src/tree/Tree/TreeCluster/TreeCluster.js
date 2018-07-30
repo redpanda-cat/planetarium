@@ -9,16 +9,7 @@ import config from "./config.js";
 
 import { getXPosition } from "./selectors.js";
 
-const TreeCluster = ({
-  minIndex,
-  maxIndex,
-  depth,
-  maxHeight,
-  yScale,
-  isHighlighted,
-  onMouseEnter,
-  onMouseLeave
-}) => {
+const TreeCluster = ({ minIndex, maxIndex, depth, maxHeight, yScale }) => {
   const x = getXPosition(depth - 1) + config["verticalBranchWidth"] / 2;
   const yMin = yScale(minIndex);
   const yMax = yScale(maxIndex);
@@ -29,14 +20,7 @@ const TreeCluster = ({
       height={height}
       x={x}
       y={yMin}
-      fill={
-        isHighlighted
-          ? config["highlightColor"]
-          : config["clusterColorGradient"][0]
-      }
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
-      data-tip
+      fill={config["clusterColorGradient"][0]}
     />
   );
 };
@@ -55,14 +39,7 @@ TreeCluster.propTypes = {
   maxHeight: PropTypes.number.isRequired,
 
   /** yScale, clusterColorScale */
-  yScale: PropTypes.func.isRequired,
-
-  /** isHighlighted - whether current cluster is highlighted */
-  isHighlighted: PropTypes.bool.isRequired,
-
-  /** onMouseEnter, onMouseLeave - event handlers */
-  onMouseEnter: PropTypes.func.isRequired,
-  onMouseLeave: PropTypes.func.isRequired
+  yScale: PropTypes.func.isRequired
 };
 
 export default TreeCluster;
