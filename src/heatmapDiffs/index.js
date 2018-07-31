@@ -14,6 +14,9 @@ import {
   TableItem
 } from "spectacle";
 
+import { getSegData } from "./Heatmap/api.js";
+import Heatmap from "./Heatmap/Heatmap.js";
+
 /**
  * Title Slide
  */
@@ -26,9 +29,10 @@ const title = (
   </Slide>
 );
 
+const normalData = getSegData();
 const data = (
   <Slide>
-    <Heading>Context</Heading>
+    <Heatmap segs={normalData} isDiffOn={false} isPloidyNormalized={false} />
   </Slide>
 );
 

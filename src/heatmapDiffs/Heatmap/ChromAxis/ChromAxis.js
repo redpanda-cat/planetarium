@@ -1,8 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { connect } from "react-redux";
-
-import { getChromPixelMapping } from "./selectors.js";
 
 import ChromAxisItem from "./ChromAxisItem.js";
 
@@ -27,8 +24,4 @@ ChromAxis.propTypes = {
   y: PropTypes.number.isRequired
 };
 
-const mapState = (state, ownProps) => ({
-  chromosomeMap: getChromPixelMapping(state, ownProps.chromosomes)
-});
-
-export default connect(mapState)(ChromAxis);
+export default ChromAxis;
