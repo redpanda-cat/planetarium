@@ -8,12 +8,13 @@ import PropTypes from "prop-types";
 import { getXPosition } from "./selectors.js";
 import config from "./config.js";
 
-const TreeNodeCircle = ({ heatmapIndex, depth, yScale }) => (
+const TreeNodeCircle = ({ heatmapIndex, depth, yScale, onClick }) => (
   <circle
     cx={getXPosition(depth)}
     cy={yScale(heatmapIndex)}
     r={config["nodeRadius"]}
     fill={config["nodeColor"]}
+    onClick={onClick}
   />
 );
 

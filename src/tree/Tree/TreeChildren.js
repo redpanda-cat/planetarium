@@ -40,9 +40,10 @@ class TreeChildren extends Component {
       auntIndex,
       offsetBy,
       analysis,
-      indPerPx
+      indPerPx,
+      zoomIn,
+      zoomOut
     } = this.props;
-    console.log(indPerPx);
 
     const childrenElements = getTreeElements(this.props.children, indPerPx);
     const offsetIndex = getOffsetIndex(indPerPx);
@@ -51,8 +52,6 @@ class TreeChildren extends Component {
       (children, child) => [child, ...children],
       []
     );
-    console.log(this.props.children);
-    console.log(childrenElements);
     let maxIndex = parentIndex;
     let nextSiblingIndex, childJSX;
 
@@ -73,7 +72,9 @@ class TreeChildren extends Component {
           nextSiblingIndex,
           newOffsetBy,
           yScale,
-          indPerPx
+          indPerPx,
+          zoomOut,
+          zoomIn
         );
         maxIndex = Math.max(maxIndex, getChildIndex(child) - newOffsetBy);
       } else {
@@ -217,7 +218,9 @@ const drawTreeNode = (
   siblingIndex,
   offsetBy,
   yScale,
-  indPerPx
+  indPerPx,
+  zoomOut,
+  zoomIn
 ) => (
   <TreeNode
     analysis={analysis}
@@ -228,6 +231,8 @@ const drawTreeNode = (
     offsetBy={offsetBy}
     yScale={yScale}
     indPerPx={indPerPx}
+    zoomOut={zoomOut}
+    zoomIn={zoomIn}
   />
 );
 

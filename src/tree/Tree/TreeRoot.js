@@ -26,24 +26,45 @@ class TreeRoot extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currRootIndex: props.trueIndex,
-      currRootMax: props.trueMaxIndex,
-      height: config["height"]
+      rootPath: [
+        {
+          index: props.trueIndex,
+          maxIndex: props.trueMaxIndex
+        }
+      ]
     };
   }
 
   render() {
-    const { currRootIndex, currRootMax, height } = this.state;
-    const numNodes = currRootMax - currRootIndex + 1;
+    const { height } = this.props;
+    const { rootPath } = this.state;
+    const { index, maxIndex } = rootPath[0];
+    const numNodes = maxIndex - index + 1;
     const indPerPx = getIndicesPerPixel(numNodes, height);
-    const yScale = getYScale(currRootIndex, currRootMax, height);
+    const yScale = getYScale(index, maxIndex, height);
+
+    const zoomOut = () =>
+      this.setState(prevState => {
+        const [firstPath, ...restPath] = prevState.rootPath;
+        return restPath.length === 0
+          ? { rootPath: prevState.rootPath }
+          : { rootPath: restPath };
+      });
+
+    const zoomIn = (index, maxIndex) =>
+      this.setState(prevState => ({
+        rootPath: [{ index, maxIndex }, ...prevState.rootPath]
+      }));
+
     return (
       <svg width={config["width"]} height={height}>
         <TreeNode
-          index={currRootIndex}
+          index={index}
           isRoot
           yScale={yScale}
           indPerPx={indPerPx}
+          zoomOut={zoomOut}
+          zoomIn={zoomIn}
         />
       </svg>
     );

@@ -18,10 +18,11 @@ const TreeNode = ({
   siblingIndex,
   offsetBy,
   isRoot,
-  indPerPx
+  indPerPx,
+  zoomIn,
+  zoomOut
 }) => {
   const data = getNodeData(index);
-  console.log(index, data);
   const { id, children, parent, maxIndex } = data;
 
   const branch =
@@ -46,6 +47,8 @@ const TreeNode = ({
         yScale={yScale}
         offsetBy={offsetBy}
         isRoot={isRoot}
+        zoomOut={zoomOut}
+        zoomIn={zoomIn}
       />
       <TreeChildren
         children={children}
@@ -55,6 +58,8 @@ const TreeNode = ({
         offsetBy={offsetBy}
         yScale={yScale}
         indPerPx={indPerPx}
+        zoomOut={zoomOut}
+        zoomIn={zoomIn}
       />
     </g>
   );

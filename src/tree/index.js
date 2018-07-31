@@ -150,7 +150,14 @@ const threshold = (
 
 const result = (
   <Slide>
-    <Tree />
+    <Layout>
+      <Fill>
+        <Image src={images.largeTree.replace("/", "")} />
+      </Fill>
+      <Fill>
+        <Tree />
+      </Fill>
+    </Layout>
   </Slide>
 );
 

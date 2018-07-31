@@ -29,21 +29,6 @@ class TreeChildrenCluster extends Component {
     offsetBy: PropTypes.number.isRequired
   };
 
-  shouldComponentUpdate(nextProps, nextState) {
-    return (
-      this.props.isHighlighted !== nextProps.isHighlighted ||
-      this.isDifferentCluster(this.props, nextProps)
-    );
-  }
-
-  isDifferentCluster(currProps, nextProps) {
-    return (
-      currProps.minIndex !== nextProps.minIndex ||
-      currProps.maxIndex !== nextProps.maxIndex ||
-      currProps.depth !== nextProps.depth
-    );
-  }
-
   render() {
     const {
       minIndex,

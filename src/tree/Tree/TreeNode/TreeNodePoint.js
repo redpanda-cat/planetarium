@@ -31,13 +31,6 @@ class TreeNodePoint extends Component {
     offsetBy: PropTypes.number.isRequired
   };
 
-  shouldComponentUpdate(nextProps, nextState) {
-    return (
-      this.props.isHighlighted !== nextProps.isHighlighted ||
-      this.props.heatmapIndex !== nextProps.heatmapIndex
-    );
-  }
-
   render() {
     const {
       nodeID,
@@ -48,7 +41,9 @@ class TreeNodePoint extends Component {
       yScale,
       isHighlighted,
       offsetBy,
-      isRoot
+      isRoot,
+      zoomOut,
+      zoomIn
     } = this.props;
 
     const onMouseEnter = () => {
@@ -68,9 +63,7 @@ class TreeNodePoint extends Component {
     };
 
     const onMouseClick = () => {
-      isRoot
-        ? this.props.unsetTreeRoot()
-        : this.props.setTreeRoot(nodeID, heatmapIndex, maxDescendantIndex);
+      isRoot ? zoomOut() : zoomIn(heatmapIndex, maxDescendantIndex);
     };
 
     return (
@@ -78,6 +71,7 @@ class TreeNodePoint extends Component {
         heatmapIndex={heatmapIndex - offsetBy}
         depth={depth}
         yScale={yScale}
+        onClick={onMouseClick}
       />
     );
   }
