@@ -20,7 +20,7 @@ const CONSTANTS = {
   stateColors: COLORS,
   ploidyColors: ["#073757", ...COLORS, "#fae2ff"],
   ploidyScale: [-12, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 12],
-  width: 1500,
+  width: 850,
   height: 1200,
   heatmapChromHeight: 12
 };

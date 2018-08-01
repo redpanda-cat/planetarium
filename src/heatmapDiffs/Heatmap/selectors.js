@@ -50,7 +50,7 @@ const getChromWidth = (chrom, bpRatio) =>
 /**
  * Gets the heatmap (index) to pixel y scale
  */
-export const getYScale = indices =>
+export const getYScale = (indices, rowHeight) =>
   scalePoint()
     .domain(indices)
-    .range([0, indices.length * config["rowHeight"]]);
+    .range([0, indices.length * rowHeight]);

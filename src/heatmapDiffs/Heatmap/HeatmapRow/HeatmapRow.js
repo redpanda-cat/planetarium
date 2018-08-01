@@ -34,7 +34,8 @@ class HeatmapRow extends Component {
       chromMap,
       bpRatio,
       isPloidyNormalized,
-      isDiffOn
+      isDiffOn,
+      rowHeight
     } = this.props;
     const { index, segs, id, ploidy } = rowData;
     const y = yScale(index);
@@ -48,7 +49,7 @@ class HeatmapRow extends Component {
           y={y}
           bpRatio={bpRatio}
           chromMap={chromMap}
-          height={config["rowHeight"]}
+          height={rowHeight}
           colorScale={
             isDiffOn ? config["ploidyColorScale"] : config["colorScale"]
           }

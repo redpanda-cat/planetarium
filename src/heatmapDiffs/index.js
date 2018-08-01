@@ -1,6 +1,9 @@
 import React from "react";
 
 import {
+  Appear,
+  Layout,
+  Fill,
   Heading,
   ListItem,
   List,
@@ -58,22 +61,16 @@ const goals = (
 
 const ploidyData = getPloidyData();
 
-const ploidy1 = (
+const ploidy = (
   <Slide>
-    <Heading>Ploidy</Heading>
     <div>
       <Heatmap segs={ploidyData} isDiffOn={false} isPloidyNormalized={false} />
     </div>
-    <div>
-      <Heatmap segs={ploidyData} isDiffOn={false} isPloidyNormalized={true} />
-    </div>
-  </Slide>
-);
-
-const ploidy2 = (
-  <Slide>
-    <Heading>Ploidy after centering</Heading>
-    <Heatmap segs={ploidyData} isDiffOn={false} isPloidyNormalized={true} />
+    <Appear fid="1">
+      <div>
+        <Heatmap segs={ploidyData} isDiffOn={false} isPloidyNormalized={true} />
+      </div>
+    </Appear>
   </Slide>
 );
 
@@ -90,18 +87,49 @@ const modeDataRow = {
   ploidy: -1,
   segs: modeData
 };
+
+const normalHeatmap = (
+  <Heatmap segs={normalData} isDiffOn={false} isPloidyNormalized={false} />
+);
+const centerHeatmap = (
+  <Heatmap segs={centerData} isDiffOn={true} isPloidyNormalized={false} />
+);
+const modeHeatmap = (
+  <Heatmap
+    segs={[modeDataRow]}
+    isDiffOn={false}
+    isPloidyNormalized={false}
+    rowHeight={20}
+    noAxis
+  />
+);
+
 const mode1 = (
   <Slide>
-    <Heading>Mode</Heading>
-    <Heatmap segs={centerData} isDiffOn={true} isPloidyNormalized={false} />
-    <Heatmap segs={[modeDataRow]} isDiffOn={false} isPloidyNormalized={false} />
+    {normalHeatmap}
+    <Appear fid="1">
+      <div>{modeHeatmap}</div>
+    </Appear>
   </Slide>
 );
 
 const mode2 = (
   <Slide>
-    <Heading>Mode</Heading>
+    {centerHeatmap} {modeHeatmap}
   </Slide>
 );
 
-export default [title, data, goals, ploidy1, ploidy2, mode1, mode2];
+const mode3 = (
+  <Slide maxWidth={1700}>
+    <Layout>
+      <Fill>
+        <div>{normalHeatmap}</div>
+      </Fill>
+      <Fill>
+        <div>{centerHeatmap}</div>
+      </Fill>
+    </Layout>
+  </Slide>
+);
+
+export default [title, data, goals, ploidy, mode1, mode2, mode3];
