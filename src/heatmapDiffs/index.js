@@ -14,7 +14,12 @@ import {
   TableItem
 } from "spectacle";
 
-import { getSegData } from "./Heatmap/api.js";
+import {
+  getSegData,
+  getPloidyData,
+  getModeData,
+  getCenterData
+} from "./Heatmap/api.js";
 import Heatmap from "./Heatmap/Heatmap.js";
 
 /**
@@ -51,25 +56,45 @@ const goals = (
  *  Ploidy
  */
 
+const ploidyData = getPloidyData();
+
 const ploidy1 = (
   <Slide>
     <Heading>Ploidy</Heading>
+    <div>
+      <Heatmap segs={ploidyData} isDiffOn={false} isPloidyNormalized={false} />
+    </div>
+    <div>
+      <Heatmap segs={ploidyData} isDiffOn={false} isPloidyNormalized={true} />
+    </div>
   </Slide>
 );
 
 const ploidy2 = (
   <Slide>
-    <Heading>Ploidy</Heading>
+    <Heading>Ploidy after centering</Heading>
+    <Heatmap segs={ploidyData} isDiffOn={false} isPloidyNormalized={true} />
   </Slide>
 );
 
 /**
  *  Mode
  */
+const centerData = getCenterData();
+const modeData = getModeData();
 
+const modeDataRow = {
+  id: "mode",
+  name: "mode",
+  index: 0,
+  ploidy: -1,
+  segs: modeData
+};
 const mode1 = (
   <Slide>
     <Heading>Mode</Heading>
+    <Heatmap segs={centerData} isDiffOn={true} isPloidyNormalized={false} />
+    <Heatmap segs={[modeDataRow]} isDiffOn={false} isPloidyNormalized={false} />
   </Slide>
 );
 

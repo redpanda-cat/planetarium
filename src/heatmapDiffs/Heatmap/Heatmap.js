@@ -42,7 +42,10 @@ const Heatmap = ({ segs, isDiffOn, isPloidyNormalized }) => {
   });
 
   return (
-    <svg width={config["width"]} height={config["height"]}>
+    <svg
+      width={config["width"]}
+      height={(filteredSegs.length + 5) * config["rowHeight"]}
+    >
       {segRows}
       <ChromAxis
         y={(filteredSegs.length + 1) * config["rowHeight"]}
