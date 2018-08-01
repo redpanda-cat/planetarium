@@ -23,6 +23,9 @@ const slide1 = (
     <Heading size={6} textColor="secondary" caps>
       Future Work
     </Heading>
+    <List>
+      <ListItem>Pseudobulk dashboard</ListItem>
+    </List>
   </Slide>
 );
 
