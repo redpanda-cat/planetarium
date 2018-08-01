@@ -1,5 +1,3 @@
-import { createSelector } from "reselect";
-
 import config from "./config.js";
 
 const getTreeClusterMinDescendants = indPerPx =>
