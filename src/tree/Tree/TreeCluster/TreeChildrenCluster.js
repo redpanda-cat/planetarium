@@ -32,26 +32,13 @@ class TreeChildrenCluster extends Component {
   render() {
     const {
       minIndex,
-      maxIndex,
       clusterHeight,
       maxHeight,
       depth,
       yScale,
-      isHighlighted,
       offsetBy,
       parentIndex
     } = this.props;
-
-    const onMouseEnter = () => {
-      this.props.highlightElement({
-        range: [minIndex, maxIndex],
-        element: "cluster"
-      });
-    };
-
-    const onMouseLeave = () => {
-      this.props.unhighlightElement();
-    };
 
     const startingIndex = Math.max(minIndex - offsetBy, parentIndex);
 

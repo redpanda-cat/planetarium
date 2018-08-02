@@ -33,34 +33,15 @@ class TreeNodePoint extends Component {
 
   render() {
     const {
-      nodeID,
       heatmapIndex,
       maxDescendantIndex,
-      numChildren,
       depth,
       yScale,
-      isHighlighted,
       offsetBy,
       isRoot,
       zoomOut,
       zoomIn
     } = this.props;
-
-    const onMouseEnter = () => {
-      this.props.highlightElement({
-        index: heatmapIndex,
-        range: [heatmapIndex, maxDescendantIndex],
-        element: "clade",
-        data: {
-          id: nodeID,
-          children: numChildren
-        }
-      });
-    };
-
-    const onMouseLeave = () => {
-      this.props.unhighlightElement();
-    };
 
     const onMouseClick = () => {
       isRoot ? zoomOut() : zoomIn(heatmapIndex, maxDescendantIndex);

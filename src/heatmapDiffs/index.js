@@ -1,21 +1,6 @@
 import React from "react";
 
-import {
-  Appear,
-  Layout,
-  Fill,
-  Heading,
-  ListItem,
-  List,
-  Slide,
-  Text,
-  Table,
-  TableHeader,
-  TableRow,
-  TableHeaderItem,
-  TableBody,
-  TableItem
-} from "spectacle";
+import { Appear, Layout, Fill, Heading, Slide } from "spectacle";
 
 import {
   getSegData,
@@ -39,19 +24,8 @@ const title = (
 
 const normalData = getSegData();
 const data = (
-  <Slide>
+  <Slide bgColor={"#FFFFFF"}>
     <Heatmap segs={normalData} isDiffOn={false} isPloidyNormalized={false} />
-  </Slide>
-);
-
-const goals = (
-  <Slide>
-    <Heading>Goals</Heading>
-    <List>
-      <ListItem>
-        Quickly see alterations that uniquely identify a clone
-      </ListItem>
-    </List>
   </Slide>
 );
 
@@ -62,7 +36,7 @@ const goals = (
 const ploidyData = getPloidyData();
 
 const ploidy = (
-  <Slide>
+  <Slide bgColor={"#FFFFFF"}>
     <div>
       <Heatmap segs={ploidyData} isDiffOn={false} isPloidyNormalized={false} />
     </div>
@@ -105,7 +79,7 @@ const modeHeatmap = (
 );
 
 const mode1 = (
-  <Slide>
+  <Slide bgColor={"#FFFFFF"}>
     {normalHeatmap}
     <Appear fid="1">
       <div>{modeHeatmap}</div>
@@ -114,13 +88,13 @@ const mode1 = (
 );
 
 const mode2 = (
-  <Slide>
+  <Slide bgColor={"#FFFFFF"}>
     {centerHeatmap} {modeHeatmap}
   </Slide>
 );
 
 const mode3 = (
-  <Slide maxWidth={1700}>
+  <Slide bgColor={"#FFFFFF"}>
     <Layout>
       <Fill>
         <div>{normalHeatmap}</div>
@@ -132,4 +106,4 @@ const mode3 = (
   </Slide>
 );
 
-export default [title, data, goals, ploidy, mode1, mode2, mode3];
+export default [title, data, ploidy, mode1, mode2, mode3];

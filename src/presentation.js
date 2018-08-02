@@ -1,18 +1,8 @@
 // Import React
-import React from "react";
+import React, { Component } from "react";
 
 // Import Spectacle Core tags
-import {
-  BlockQuote,
-  Cite,
-  Deck,
-  Heading,
-  ListItem,
-  List,
-  Quote,
-  Slide,
-  Text
-} from "spectacle";
+import { Deck } from "spectacle";
 
 import Slides from "./slides.js";
 
@@ -24,9 +14,10 @@ require("normalize.css");
 
 const theme = createTheme(
   {
-    primary: "white",
+    primary: "#e6e6e6",
+    subprimary: "#07245e",
     secondary: "#1F2022",
-    tertiary: "#03A9FC",
+    tertiary: "#07245e",
     quartenary: "#CECECE"
   },
   {
@@ -35,7 +26,7 @@ const theme = createTheme(
   }
 );
 
-export default class Presentation extends React.Component {
+export default class Presentation extends Component {
   render() {
     return (
       <Deck theme={theme} contentWidth={1700} contentHeight={1000}>

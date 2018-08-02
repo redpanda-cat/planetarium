@@ -3,8 +3,6 @@
  */
 
 import React, { Component } from "react";
-import PropTypes from "prop-types";
-
 import { getChromosomeData } from "./api.js";
 
 import { getYScale, getChromPixelMapping, getBPRatio } from "./selectors.js";

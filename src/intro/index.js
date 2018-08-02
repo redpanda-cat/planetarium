@@ -1,17 +1,5 @@
 import React from "react";
-import {
-  BlockQuote,
-  Cite,
-  Deck,
-  Heading,
-  ListItem,
-  List,
-  Quote,
-  Slide,
-  Text,
-  Image,
-  Appear
-} from "spectacle";
+import { Heading, ListItem, List, Slide, Text, Image, Appear } from "spectacle";
 
 const images = {
   qc: require("./assets/qc.png"),
@@ -19,18 +7,18 @@ const images = {
 };
 
 const title = (
-  <Slide transition={["zoom"]} bgColor="primary">
-    <Heading size={1} caps lineHeight={1} textColor="secondary">
+  <Slide transition={["zoom"]} bgColor="bgColor">
+    <Heading size={1} caps lineHeight={1} textColor="primary">
       Lyra
     </Heading>
 
-    <Text margin="10px 0 0" textColor="tertiary" textSize={30} bold>
+    <Text margin="10px 0 0" textColor="subprimary" textSize={30} bold>
       AKA How to visualize large trees and copy number heatmaps in real time
     </Text>
-    <Text margin="10px" textColor="secondary" textSize={20} lineHeight={20}>
+    <Text margin="10px" textColor="subprimary" textSize={20} lineHeight={20}>
       Shah Lab Meeting - August 7th, 2018
     </Text>
-    <Text margin="10px 0 0" textColor="secondary" textSize={20}>
+    <Text margin="10px 0 0" textColor="subprimary" textSize={20}>
       Viz Team! :D
     </Text>
   </Slide>
@@ -42,7 +30,7 @@ const prev1 = (
     bgImage={images.qc.replace("/", "")}
     bgDarken={0.75}
   >
-    <Text textColor="primary" size={1}>
+    <Text textColor="secondary" size={1}>
       Previously, from the viz team...
     </Text>
   </Slide>
@@ -55,7 +43,7 @@ const prev2 = (
 const changes = (
   <Slide>
     <Heading>Major Changes</Heading>
-    <List>
+    <List padding="0em 10em">
       <Appear fid="1">
         <ListItem>Build specific dashboards</ListItem>
       </Appear>
@@ -70,7 +58,7 @@ const changes = (
 );
 
 const now = (
-  <Slide transition={["slide"]}>
+  <Slide transition={["slide"]} bgColor={"#FFFFFF"}>
     <Image src={images.lyra.replace("/", "")} />
   </Slide>
 );

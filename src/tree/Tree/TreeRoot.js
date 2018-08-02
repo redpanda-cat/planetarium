@@ -45,6 +45,7 @@ class TreeRoot extends Component {
 
     const zoomOut = () =>
       this.setState(prevState => {
+        /*eslint-disable no-unused-vars*/
         const [firstPath, ...restPath] = prevState.rootPath;
         return restPath.length === 0
           ? { rootPath: prevState.rootPath }

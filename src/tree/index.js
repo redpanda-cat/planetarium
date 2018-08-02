@@ -32,7 +32,7 @@ const images = {
  */
 
 const title = (
-  <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
+  <Slide transition={["fade"]} textColor="tertiary">
     <Heading size={6} textColor="secondary" caps fit>
       Creating a scalable tree
     </Heading>
@@ -94,7 +94,7 @@ const data = (
 );
 
 const cellscape1 = (
-  <Slide>
+  <Slide bgColor={"#FFFFFF"}>
     <Layout>
       <Fill>
         <Image src={images.cellscape.replace("/", "")} />
@@ -111,7 +111,7 @@ const cellscape1 = (
 const goals = (
   <Slide>
     <Heading>Goals</Heading>
-    <List>
+    <List padding="0em 10em">
       <Appear fid="1">
         <ListItem>Retains overall detail of original tree</ListItem>
       </Appear>
@@ -129,7 +129,7 @@ const goals = (
  * Thresholding
  */
 const threshold = (
-  <Slide>
+  <Slide bgColor={"#FFFFFF"}>
     <Layout>
       <Fill>
         <Image src={images.cellscape.replace("/", "")} />
@@ -149,7 +149,7 @@ const threshold = (
 );
 
 const result = (
-  <Slide>
+  <Slide bgColor={"#FFFFFF"}>
     <Layout>
       <Fill>
         <Image src={images.largeTree.replace("/", "")} />

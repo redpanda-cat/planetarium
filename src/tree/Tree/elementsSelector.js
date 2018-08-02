@@ -11,21 +11,6 @@ const getThresholdIndex = indPerPx => {
   return thresholdIndex <= 1 ? -1 : thresholdIndex;
 };
 
-/**
- * 	Factory function - gets elements (nodes and clusters) of tree's (by cell ID) children
- */
-export const makeGetTreeElementsByChildren = () => {
-  return createSelector(
-    [
-      (state, children) => children,
-      getThresholdIndex,
-      getTreeClusterMinDescendants
-    ],
-    // (array, int) => array
-    createTreeElementsForChildren
-  );
-};
-
 export const getTreeElements = (children, indPerPx) =>
   createTreeElementsForChildrenFunc(
     [],
@@ -34,26 +19,6 @@ export const getTreeElements = (children, indPerPx) =>
     getTreeClusterMinDescendants(indPerPx),
     children
   );
-
-/**
- * Create elements for children, based on whether distance between siblings is greater than threshold
- * @param {array} children
- * @param {int} thresholdIndex
- * @return {array} elements - list of clusters and nodes
- */
-const createTreeElementsForChildren = (
-  children,
-  thresholdIndex,
-  minClusterDescendants
-) => {
-  return createTreeElementsForChildrenFunc(
-    [],
-    initializeCluster(),
-    thresholdIndex,
-    minClusterDescendants,
-    children
-  );
-};
 
 const createTreeElementsForChildrenFunc = (
   elements,
