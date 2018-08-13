@@ -8,7 +8,7 @@ const images = {
 
 const title = (
   <Slide transition={["zoom"]} bgColor="bgColor">
-    <Heading size={1} caps lineHeight={1} textColor="primary">
+    <Heading size={1} caps lineHeight={1}>
       Lyra
     </Heading>
 
@@ -30,7 +30,7 @@ const prev1 = (
     bgImage={images.qc.replace("/", "")}
     bgDarken={0.75}
   >
-    <Text textColor="secondary" size={1}>
+    <Text textColor="primary" size={1}>
       Previously, from the viz team...
     </Text>
   </Slide>
@@ -44,15 +44,9 @@ const changes = (
   <Slide>
     <Heading>Major Changes</Heading>
     <List padding="0em 10em">
-      <Appear fid="1">
         <ListItem>Build specific dashboards</ListItem>
-      </Appear>
-      <Appear fid="2">
         <ListItem>React + Redux frontend</ListItem>
-      </Appear>
-      <Appear fid="3">
         <ListItem>ElasticSearch + GraphQL backend</ListItem>
-      </Appear>
     </List>
   </Slide>
 );

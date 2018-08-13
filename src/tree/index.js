@@ -112,15 +112,9 @@ const goals = (
   <Slide>
     <Heading>Goals</Heading>
     <List padding="0em 10em">
-      <Appear fid="1">
         <ListItem>Retains overall detail of original tree</ListItem>
-      </Appear>
-      <Appear fid="2">
         <ListItem>Renders quickly</ListItem>
-      </Appear>
-      <Appear fid="3">
         <ListItem>Scales well</ListItem>
-      </Appear>
     </List>
   </Slide>
 );
