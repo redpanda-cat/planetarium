@@ -29,7 +29,7 @@ const theme = createTheme(
 export default class Presentation extends Component {
   render() {
     return (
-      <Deck theme={theme} contentWidth={1700} contentHeight={1000}>
+      <Deck theme={theme} contentWidth={1500} contentHeight={1000}>
         {Slides}
       </Deck>
     );
